@@ -1,0 +1,259 @@
+<!-- @format -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Order summary card</title>
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      a {
+        cursor: revert;
+      }
+      ol,
+      ul,
+      menu {
+        list-style: none;
+      }
+      img {
+        max-width: 100%;
+      }
+      table {
+        border-collapse: collapse;
+      }
+      textarea {
+        white-space: revert;
+      }
+
+      :where([hidden]) {
+        display: none;
+      }
+      :where([draggable="true"]) {
+        -webkit-user-drag: element;
+      }
+
+      /* ---------GENERAL STYLING--------- */
+      :root {
+        --color-pb: hsl(225, 100%, 94%);
+        --color-bb: hsl(245, 75%, 52%);
+        --color-vpb: hsl(225, 100%, 98%);
+        --color-desb: hsl(224, 23%, 55%);
+        --color-db-: hsl(223, 47%, 23%);
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        font-family: "Red Hat Display", sans-serif;
+        background: url("./pattern-background-desktop.svg") no-repeat top center;
+        background-color: var(--color-pb);
+        min-height: 100vh;
+        background-size: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 25px;
+        font-size: 1.6rem;
+        overflow: hidden;
+      }
+
+      img {
+        display: block;
+        border-radius: 1.5rem 1.5rem 0 0;
+      }
+
+      .container {
+        width: 40rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .content {
+        background-color: white;
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0 0 1.5rem 1.5rem;
+      }
+
+      .description {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0 2.3rem;
+        color: var(--color-desb);
+        font-size: 1.5rem;
+      }
+
+      .description h1,
+      .description p {
+        margin: 0.7rem 0;
+        line-height: 1.6;
+      }
+
+      .description h1 {
+        font-weight: 900;
+        font-size: 2.5rem;
+        color: var(--color-db-);
+      }
+
+      .pricing {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--color-vpb);
+        padding: 2rem;
+        border-radius: 1rem;
+        margin: 1.6rem;
+        font-size: 1.4rem;
+        width: 100%;
+      }
+
+      .pricing-plan {
+        color: var(--color-desb);
+        font-size: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .annual {
+        color: var(--color-db-);
+        font-weight: 900;
+      }
+
+      .change {
+        margin-left: 7rem;
+        font-weight: 700;
+      }
+
+      .change a {
+        color: var(--color-db-);
+      }
+
+      .btn {
+        margin: 1.6rem 0;
+        width: 100%;
+        padding: 1.5rem;
+        border: 0;
+        font-size: 1.4rem;
+        font-weight: 700;
+        border-radius: 0.7rem;
+        color: var(--color-vpb);
+        background-color: var(--color-bb);
+        box-shadow: 0 11px 25px #c4b5fd;
+      }
+
+      .cancel {
+        color: var(--color-desb);
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin: 1.5rem 0;
+      }
+
+      /* HOVER */
+      .cancel:hover {
+        cursor: pointer;
+        color: var(--color-db-);
+      }
+
+      .btn:hover {
+        background-color: #7581f2;
+        cursor: pointer;
+      }
+
+      .change:hover {
+        color: #7581f2;
+        cursor: pointer;
+      }
+      .change a:visited {
+        color: var(--color-bb);
+      }
+
+      @media screen and (max-width: 375px) {
+        html {
+          font-size: 54%;
+        }
+        .pricing {
+          padding: 1.5rem;
+          border-radius: 1.4rem;
+        }
+        .description {
+          padding: 0 1rem;
+        }
+        .description p {
+          line-height: 1.6;
+          font-size: 1.7rem;
+        }
+        .cancel {
+          font-size: 1.6rem;
+        }
+        .btn {
+          padding: 2rem;
+          border-radius: 1.2rem;
+        }
+        .change {
+          margin-left: 4rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <section class="img">
+        <img src="./illustration-hero.svg" alt="Girl listening to music" />
+      </section>
+      <section class="content">
+        <header class="description">
+          <h1>Order Summary</h1>
+          <p>
+            You can now listen to millions of songs, audiobooks, and podcasts on
+            any device anywhere you like!
+          </p>
+        </header>
+        <section class="pricing">
+          <img src="./icon-music.svg" alt="Music icon" />
+          <div class="pricing-plan">
+            <p class="annual">Annual Plan</p>
+            <p>$59.99/year</p>
+          </div>
+          <a class="change" href="#">Change</a>
+        </section>
+        <button class="btn">Proceed to Payment</button>
+        <p class="cancel">Cancel Order</p>
+      </section>
+    </div>
+  </body>
+</html>
